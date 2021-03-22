@@ -384,18 +384,34 @@ Index and can be installed by :ref:`pip`.
 
 Make sure you have the latest versions of PyPA's ``build`` installed:
 
-.. code-block:: bash
+.. tab:: Windows
 
-    python3 -m pip install --upgrade build
+    .. code-block:: bash
+
+        py -m pip install --upgrade build
+
+.. tab:: Unix/macOS
+
+    .. code-block:: bash
+
+        python3 -m pip install --upgrade build
 
 .. tip:: If you have trouble installing these, see the
    :doc:`installing-packages` tutorial.
 
 Now run this command from the same directory where :file:`pyproject.toml` is located:
 
-.. code-block:: bash
+.. tab:: Windows
 
-    python3 -m build
+    .. code-block:: bash
+
+        py -m build
+
+.. tab:: Unix/macOS
+
+    .. code-block:: bash
+
+        python3 -m build
 
 This command should output a lot of text and once completed should generate two
 files in the :file:`dist` directory:
@@ -449,15 +465,31 @@ won't see that token again.**
 Now that you are registered, you can use :ref:`twine` to upload the
 distribution packages. You'll need to install Twine:
 
-.. code-block:: bash
+.. tab:: Windows
 
-    python3 -m pip install --user --upgrade twine
+    .. code-block:: bash
+
+        py -m pip install --user --upgrade twine
+
+.. tab:: Unix/macOS
+
+    .. code-block:: bash
+
+        python3 -m pip install --user --upgrade twine
 
 Once installed, run Twine to upload all of the archives under :file:`dist`:
 
-.. code-block:: bash
+.. tab:: Windows
 
-    python3 -m twine upload --repository testpypi dist/*
+    .. code-block:: bash
+
+        py -m twine upload --repository testpypi dist/*
+
+.. tab:: Unix/macOS
+
+    .. code-block:: bash
+
+        python3 -m twine upload --repository testpypi dist/*
 
 You will be prompted for a username and password. For the username,
 use ``__token__``. For the password, use the token value, including
@@ -487,9 +519,17 @@ You can use :ref:`pip` to install your package and verify that it works.
 Create a new :ref:`virtualenv` (see :doc:`/tutorials/installing-packages` for
 detailed instructions) and install your package from TestPyPI:
 
-.. code-block:: bash
+.. tab:: Windows
 
-    python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps example-pkg-YOUR-USERNAME-HERE
+    .. code-block:: bash
+
+        py -m pip install --index-url https://test.pypi.org/simple/ --no-deps example-pkg-YOUR-USERNAME-HERE
+
+.. tab:: Unix/macOS
+
+    .. code-block:: bash
+
+        python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps example-pkg-YOUR-USERNAME-HERE
 
 Make sure to specify your username in the package name!
 
@@ -512,6 +552,18 @@ something like this:
 
 You can test that it was installed correctly by importing the package.
 Run the Python interpreter (make sure you're still in your virtualenv):
+
+.. tab:: Windows
+
+    .. code-block:: bash
+
+        py
+
+.. tab:: Unix/macOS
+
+    .. code-block:: bash
+
+        python
 
 .. code-block:: bash
 
